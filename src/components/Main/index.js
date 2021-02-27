@@ -50,6 +50,17 @@ class Main extends Component {
         }
     };
 
+    handleInputChange = event => {
+        console.log(this.state)
+        const searchResults =[...this.state.searchResults];
+        const value = event.target.value.toLowerCase();
+        const filteredResults = searchResults.filter(searchEmployee => searchEmployee.name.first.toLowerCase().indexOf(value) > -1)
+        this.setState({
+            ...this.state,
+            filteredResults
+        });
+    };
+
     
 
 }

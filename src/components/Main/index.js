@@ -82,7 +82,19 @@ class Main extends Component {
 
     };
 
-    
+    render() {
+        return (
+            <div>
+                <SearchBar
+                    searchEmployee={this.state.searchResults}
+                    handleSubmit={this.handleSubmit}
+                    handleInputChange={this.handleInputChange}
+                />
+                <Table results={this.state.filteredResults}
+                    sortedByName={this.sortedByName} />
+            </div>
+        )
+    }
 
 }
 

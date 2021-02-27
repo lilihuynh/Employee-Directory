@@ -31,6 +31,25 @@ class Main extends Component {
         console.log(this.state)
     };
 
+    //sorting employees by names
+    sortedByName = () => {
+        const newFiltered = this.state.filteredResults;
+
+        if (this.state.order === "asc") {
+            const newList = newFiltered.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
+            this.setState({
+                filteredResults: newList,
+                order: "desc"
+            })
+        } else {
+            const newList = newFiltered.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1)
+            this.setState({
+                filteredResults: newList,
+                order: "asc"
+            })
+        }
+    };
+
     
 
 }

@@ -61,6 +61,16 @@ class Main extends Component {
         });
     };
 
+    //update page
+    searchUpdate = () => {
+        API.searchAPI()
+            .then(res => this.setState({
+                filteredResults: res.data.results,
+                searchResults: res.data.results
+
+            }))
+    }
+
     
 
 }

@@ -71,6 +71,17 @@ class Main extends Component {
             }))
     }
 
+    //submit button
+    handleSubmit = event => {
+        event.preventDefault();
+        const { searchResults, search } = this.state;
+        const filteredResults = searchResults.filter(searchEmployee => searchEmployee.name.first.includes(search))
+        this.setState({
+            filteredResults
+        });
+
+    };
+
     
 
 }
